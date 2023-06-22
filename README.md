@@ -17,6 +17,24 @@ pnpm install
 yarn install
 ```
 
+## Setup
+
+Make sure to install the dev dependencies:
+
+\*install Tailwindscss:
+
+```bash
+# npm
+npm i -D @nuxtjs/tailwindcss
+
+# pnpm
+pnpm i -D @nuxtjs/tailwindcss
+
+# yarn
+yarn add -D @nuxtjs/tailwindcss
+
+```
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:

@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <main class="container mx-auto mt-4">
+    <FirstComponent />
+  </main>
 </template>
