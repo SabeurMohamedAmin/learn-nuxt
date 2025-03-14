@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 defineEmits(['menu-toggle', 'close-menu']);
 // Reference to the mobile menu HTML element
 const mobileMenu = ref(null);
@@ -29,6 +29,7 @@ const handleClickOutside = () => {
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
+
     <section class="lg:hidden hidden"
       ref="mobileMenu">
       <MobileMenu @close-menu="useToggleVisibility(mobileMenu)" />

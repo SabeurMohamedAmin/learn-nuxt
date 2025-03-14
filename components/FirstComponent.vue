@@ -25,25 +25,25 @@ const removeClassonhover = (event) => {
       </a>
       :
     </p>
-    <ul class="font-bold bg-gray-200 p-2 rounded-lg border-2 border-slate-300">
+    <ul class="font-bold bg-color-secondary p-2 space-y-2 rounded-lg border-2 border-color-modes">
       <li @click="useClickToCopy($event)"
         title="click to copy the command"
-        class="cursor-pointer rounded-md p-1 border w-fit hover:border-sky-500 active:bg-sky-200">
+        class="cursor-pointer rounded-md p-1  border border-color-modes w-fit hover:border-sky-500 active:bg-sky-200">
         npm create nuxt@latest &lt learn-nuxt &gt
       </li>
       <li @click="useClickToCopy($event)"
         title="click to copy the command"
-        class="cursor-pointer rounded-md p-1 border w-fit	hover:border-sky-500 active:bg-sky-200">
+        class="cursor-pointer rounded-md p-1 border border-color-modes w-fit	hover:border-sky-500 active:bg-sky-200">
         cd learn-nuxt
       </li>
       <li @click="useClickToCopy($event)"
         title="click to copy the command"
-        class="cursor-pointer rounded-md p-1 border w-fit	hover:border-sky-500 active:bg-sky-200 ">
+        class="cursor-pointer rounded-md p-1 border border-color-modes w-fit	hover:border-sky-500 active:bg-sky-200 ">
         npm run dev
       </li>
     </ul>
   </div>
-  <span class="border-2 border-gray-300 m-6 block">
+  <span class="border-2 border-color-modes m-6 block">
   </span>
   <!-- Add Tailwind CSS -->
   <h2 class="text-xl mb-2">
@@ -54,10 +54,10 @@ const removeClassonhover = (event) => {
       now to add tailwindscss plugin for nuxt as Developper dependencie for styling our nuxt3 app, you use the following
       command:
     </p>
-    <ul class="font-bold bg-gray-200 p-2 rounded-lg border-2 border-slate-300">
+    <ul class="font-bold bg-color-secondary p-2 rounded-lg border-2 border-color-modes">
       <li @click="useClickToCopy($event)"
         title="click to copy the command"
-        class="cursor-pointer rounded-md p-1 border w-fit	hover:border-sky-500 active:bg-sky-200 ">
+        class="cursor-pointer rounded-md p-1 border border-color-modes w-fit	hover:border-sky-500 active:bg-sky-200 ">
         pnpm i -D @nuxtjs/tailwindcss
       </li>
     </ul>
@@ -66,13 +66,13 @@ const removeClassonhover = (event) => {
       and name it
       <span @click="useClickToCopy($event)"
         title="click to copy the file name"
-        class="cursor-pointer rounded-md font-bold border w-fit	hover:border-sky-500 active:bg-sky-200 ">
+        class="cursor-pointer rounded-md font-bold border border-color-modes border-color-modes w-fit	hover:border-sky-500 active:bg-sky-200 ">
         tailwind.config.js
       </span>
       or
       <span @click="useClickToCopy($event)"
         title="click to copy the name"
-        class="cursor-pointer rounded-md font-bold border w-fit	hover:border-sky-500 active:bg-sky-200 ">
+        class="cursor-pointer rounded-md font-bold border border-color-modes w-fit	hover:border-sky-500 active:bg-sky-200 ">
         tailwind.config.ts
       </span>
       the file shuld be in the root of your project,
@@ -82,7 +82,7 @@ const removeClassonhover = (event) => {
       @click="useClickToCopy($event)"
       @mouseenter="addClassonhover"
       @mouseleave="removeClassonhover"
-      class="cursor-pointer bg-gray-200 p-2 pr-5 rounded-lg border-2 border-slate-300 overflow-auto">
+      class="cursor-pointer bg-color-secondary p-2 pr-5 rounded-lg border-2 border-color-modes overflow-auto">
   // Docs: https://tailwindcss.com/docs/configuration
   import colors from "tailwindcss/colors";
 

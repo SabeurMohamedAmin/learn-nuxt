@@ -14,7 +14,7 @@ const basicMenu = ref(null);
       class="fixed inset-0 z-10 bg-gray-400 bg-opacity-50 transition-opacity lg:hidden">
     </div>
     <main
-      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-menu-modes px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <section class="flex items-center justify-between">
         <NuxtLink href="/"
           class="-m-1.5 p-1.5">
@@ -26,7 +26,7 @@ const basicMenu = ref(null);
         <!-- Close mobile menu button, show/hide based on slide-over state. -->
         <button @click.stop.prevent="emit('close-menu')"
           type="button"
-          class="-m-2.5 border-2 rounded-lg p-2.5 text-gray-700">
+          class="-m-2.5 border-2 rounded-lg p-2.5 ">
           <span class="sr-only">
             Close menu
           </span>
@@ -52,13 +52,13 @@ const basicMenu = ref(null);
                 aria-controls="disclosure-1"
                 aria-expanded="false"
                 class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base
-                    font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                 Basics Nuxt 3
                 <!--
-                    Expand/collapse icon, toggle classes based on menu open state.
-
-                    Open: "rotate-180", Closed: ""
-                  -->
+                      Expand/collapse icon, toggle classes based on menu open state.
+  
+                      Open: "rotate-180", Closed: ""
+                    -->
                 <svg class="h-5 w-5 flex-none"
                   viewBox="0 0 20 20"
                   fill="currentColor"
