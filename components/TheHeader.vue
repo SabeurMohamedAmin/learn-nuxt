@@ -1,5 +1,5 @@
 <script setup>
-import { ref} from 'vue';
+import { ref } from 'vue';
 defineEmits(['menu-toggle', 'close-menu']);
 // Reference to the mobile menu HTML element
 const mobileMenu = ref(null);
@@ -14,20 +14,23 @@ const handleClickOutside = () => {
 </script>
 
 <template>
-  <header class="bg-white">
+  <header class="shadow-lg">
     <!-- lg screen menu, show/hide based on screen size. -->
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      aria-label="Global">
       <div class="flex lg:flex-1">
         <TheLogo />
       </div>
-      <TheHumburguerMenu @menu-toggle="useToggleMenu(mobileMenu)"/>
-      <TheMenu/>
+      <TheHumburguerMenu @menu-toggle="useToggleMenu(mobileMenu)" />
+      <TheMenu />
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        <a href="#"
+          class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <section class="lg:hidden hidden" ref="mobileMenu" >
+    <section class="lg:hidden hidden"
+      ref="mobileMenu">
       <MobileMenu @close-menu="useToggleMenu(mobileMenu)" />
     </section>
   </header>

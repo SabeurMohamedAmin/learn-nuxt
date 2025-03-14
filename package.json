@@ -14,5 +14,9 @@
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@types/node": "^18.19.80",
     "nuxt": "^3.16.0"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.2.0",
+    "@nuxtjs/color-mode": "^3.5.2"
   }
 }
