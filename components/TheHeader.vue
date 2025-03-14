@@ -1,5 +1,6 @@
 <script setup>
 import { ref} from 'vue';
+defineEmits(['menu-toggle', 'close-menu']);
 // Reference to the mobile menu HTML element
 const mobileMenu = ref(null);
 // Function to handle click outside the menu and close it if it's open

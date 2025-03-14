@@ -1,7 +1,8 @@
 <script setup>
 
 </script>
-
 <template>
-    <TheGrid/>
+    <h1>
+        index of Basic nuxt
+    </h1>
 </template>

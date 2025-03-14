@@ -2,15 +2,21 @@
 import colors from "tailwindcss/colors";
 
 // Default are on https://tailwindcss.nuxtjs.org/tailwind/config#default-configuration
-export default{
-    theme: {
-        extend: {
-          colors: {
-            primary: colors.teal["500"],
-          },
-          backgroundColor: {
-            primary: colors.teal["500"],
-          },
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: colors.teal["500"],
+      },
+      backgroundColor: {
+        primary: colors.teal["500"],
+      },
+      screens: {
+        xs: {
+          min: "475px",
+          max: "640px",
         },
       },
-}
+    },
+  },
+};

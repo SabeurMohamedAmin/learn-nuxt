@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^18",
-    "nuxt": "^3.5.2"
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@types/node": "^18.19.80",
+    "nuxt": "^3.16.0"
   }
 }
