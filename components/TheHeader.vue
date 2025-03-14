@@ -7,7 +7,7 @@ const mobileMenu = ref(null);
 const handleClickOutside = () => {
   const isDisplayBasicMenu = !basicMenu.value.classList.contains('hidden');
   if (isDisplayBasicMenu) {
-    useToggleMenu(basicMenu.value);
+    useToggleVisibility(basicMenu.value);
   }
 };
 
@@ -21,7 +21,7 @@ const handleClickOutside = () => {
       <div class="flex lg:flex-1">
         <TheLogo />
       </div>
-      <TheHumburguerMenu @menu-toggle="useToggleMenu(mobileMenu)" />
+      <TheHumburguerMenu @menu-toggle="useToggleVisibility(mobileMenu)" />
       <TheMenu />
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="#"
@@ -31,7 +31,7 @@ const handleClickOutside = () => {
     <!-- Mobile menu, show/hide based on menu open state. -->
     <section class="lg:hidden hidden"
       ref="mobileMenu">
-      <MobileMenu @close-menu="useToggleMenu(mobileMenu)" />
+      <MobileMenu @close-menu="useToggleVisibility(mobileMenu)" />
     </section>
   </header>
 </template>

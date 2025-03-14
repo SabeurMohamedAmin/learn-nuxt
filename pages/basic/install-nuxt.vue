@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
-  <FirstComponent/>
+  <FirstComponent />
 </template>
 
 <style scoped></style>

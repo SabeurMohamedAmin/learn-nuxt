@@ -1,34 +1,59 @@
-export const useClickToCopy = (event: Event): void => {
-  const el = (event.target as HTMLElement).innerText;
+import { ref } from 'vue';
 
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(el)
-      .then(() => {
-        // Text copied successfully
-      })
-      .catch((error) => {
-        // Unable to write to clipboard
-        console.error('Error copying text to clipboard:', error);
-      });
-  } else {
-    // SUPPORT OLD BROWSER AND NON-HTTPS WEBSITE
-    const textArea = document.createElement('textarea');
-    textArea.value = el;
-    textArea.style.position = 'fixed';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+interface resultClickToCopy {
+  copied: Ref<boolean>,
+  error : Ref<string | null>,
+  copyToClipboard : (event: Event) => Promise<void>,
+}
 
+export const useClickToCopy = ():resultClickToCopy => {
+  // Reactive state to track success or error messages
+  const copied = ref<boolean>(false);
+  const error = ref<string | null>(null);
+
+  /**
+   * Copies text to the clipboard.
+   * @param event - The click event from which the text is extracted.
+   */
+  const copyToClipboard = async (event: Event): Promise<void> => {
     try {
-      const successful = document.execCommand('copy');
-      if (successful) {
-        // Text copied successfully
+      // Extract the text content from the clicked element
+      const el = (event.target as HTMLElement).innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        // Use modern clipboard API for HTTPS websites
+        await navigator.clipboard.writeText(el);
+        copied.value = true;
+        error.value = null; // Clear any previous errors
       } else {
-        console.error('Unable to copy text to clipboard.');
+        // Fallback for older browsers or non-HTTPS websites
+        const textArea = document.createElement('textarea');
+        textArea.value = el;
+        textArea.style.position = 'fixed';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        const successful = document.execCommand('copy');
+        if (!successful) {
+          throw new Error('Unable to copy text to clipboard.');
+        }
+
+        document.body.removeChild(textArea);
+        copied.value = true;
+        error.value = null; // Clear any previous errors
       }
-    } catch (error) {
-      console.error('Error copying text to clipboard:', error);
+    } catch (err) {
+      // Handle errors during the copy process
+      console.error('Error copying text to clipboard:', err);
+      error.value = err instanceof Error ? err.message : 'Unknown error';
+      copied.value = false;
     }
-    document.body.removeChild(textArea);
-  }
+  };
+
+  return {
+    copied,
+    error,
+    copyToClipboard,
+  };
 };

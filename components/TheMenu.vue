@@ -8,7 +8,7 @@ const basicMenu = ref(null);
 const handleClickOutside = () => {
   const isDisplayBasicMenu = !basicMenu.value.classList.contains('hidden');
   if (isDisplayBasicMenu) {
-    useToggleMenu(basicMenu.value);
+    useToggleVisibility(basicMenu.value);
   }
 };
 
@@ -24,11 +24,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main class="hidden lg:flex lg:gap-x-12 ">
+  <main class="hidden lg:flex lg:gap-x-12">
     <!-- Basics_of_learning_Naxt_3_Menu-->
-    <nav class="relative bg-grey rounded-lg shadow-lg ring-1 ring-gray-900/5">
+    <nav class="relative bg-gre rounded-lg shadow-lg ring-1 ring-gray-900/5"
       name="Basics_of_learning_Naxt_3_Menu">
-      <button @click.stop.prevent="useToggleMenu(basicMenu)"
+      <button @click.stop.prevent="useToggleVisibility(basicMenu)"
         type="button"
         aria-expanded="false"
         class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700 hover:scale-110">
